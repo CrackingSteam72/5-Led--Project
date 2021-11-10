@@ -1,0 +1,129 @@
+int BlueLedPin=10; //Delcares Blue Led Pin
+int WhiteLedPin=8; //Declares White Led Pin
+int RedLedPin=6;  //Declares Red Led Pin
+int GreenLedPin=4; //Declares Green Led Pin
+int YellowLedPin=2; //Declares Yellow Led Pin
+int BlueOnTime=500;//How Long The Led Will Be On
+int WhiteOnTime=500;//How Long The Led Will Be On
+int RedOnTime=500;//How Long The Led Will Be On
+int GreenOnTime=500;//How Long The Led Will Be On
+int YellowOnTime=500;//How Long The Led Will Be On
+int BlueOffTime=500;//How Long The Led Will Be Off
+int WhiteOffTime=500;//How Long The Led Will Be Off
+int RedOffTime=500;//How Long The Led Will Be Off
+int GreenOffTime=500;//How Long The Led Will Be Off
+int YellowOffTime=500;//How Long The Led Will Be Off
+int NumBlueBlinks;//Amount Of Times The Led Will Blink
+int NumWhiteBlinks;//Amount Of Times The Led Will Blink
+int NumRedBlinks;//Amount Of Times The Led Will Blink
+int NumGreenBlinks;//Amount Of Times The Led Will Blink
+int NumYellowBlinks;//Amount Of Times The Led Will Blink
+String BlueMessage = ("The Blue Led Is Blinking");
+String WhiteMessage = ("The White Led Is Blinking");
+String RedMessage = ("The Red Led Is Blinking");
+String GreenMessage = ("The Green Led Is Blinking");
+String YellowMessage = ("The Yellow Led Is Blinking");
+
+
+
+void setup() {
+
+Serial.begin(74880); //Turns On Serial Monitor
+pinMode(BlueLedPin,OUTPUT);//Declares Led Pin As An Output
+pinMode(WhiteLedPin,OUTPUT);//Declares Led Pin As An Output
+pinMode(RedLedPin,OUTPUT);//Declares Led Pin As An Output
+pinMode(GreenLedPin,OUTPUT);//Declares Led Pin As An Output
+pinMode(YellowLedPin,OUTPUT);//Declares Led Pin As An Output
+
+Serial.println("How Many Times Do You Want The Blue Led To Blink? "); //Prompt User For Input
+ while(Serial.available()==0){ } //Wait For User To Input
+  NumBlueBlinks = Serial.parseInt(); //Read User Input
+  
+  Serial.println("How Many Times Do You Want The White Led To Blink? "); //Prompt User For Input
+ while(Serial.available()==0){ } //Wait For User To Input
+  NumWhiteBlinks = Serial.parseInt(); //Read User Input
+  
+  Serial.println("How Many Times Do You Want The Red Led To Blink? "); //Prompt User For Input
+ while(Serial.available()==0){ } //Wait For User To Input
+  NumRedBlinks = Serial.parseInt(); //Read User Input
+  
+  Serial.println("How Many Times Do You Want The Green Led To Blink? "); //Prompt User For Input
+ while(Serial.available()==0){ } //Wait For User To Input
+  NumGreenBlinks = Serial.parseInt(); //Read User Input
+  
+  Serial.println("How Many Times Do You Want The Yellow Led To Blink? "); //Prompt User For Input
+ while(Serial.available()==0){ } //Wait For User To Input
+  NumYellowBlinks = Serial.parseInt(); //Read User Input
+  
+}
+
+void loop() {
+
+ 
+Serial.println(BlueMessage);
+Serial.println(" ");
+for(int j=1;j<=NumBlueBlinks;j=j+1){
+ Serial.println("You Are On Blink # ");
+ Serial.println( j );
+ digitalWrite(BlueLedPin,HIGH);//Turns On Led
+ delay(BlueOnTime);            //Wait
+ digitalWrite(BlueLedPin,LOW); //Turns Off Led
+ delay(BlueOffTime);           //Wait
+}
+
+
+
+Serial.println(WhiteMessage);
+Serial.println(" ");
+for(int j=1;j<=NumWhiteBlinks;j=j+1){
+ Serial.println("You Are On Blink # ");
+ Serial.println( j );
+ digitalWrite(WhiteLedPin,HIGH);//Turns On Led
+ delay(WhiteOnTime);            //Wait
+ digitalWrite(WhiteLedPin,LOW); //Turns Off Led
+ delay(WhiteOffTime);           //Wait
+}
+
+
+
+
+ Serial.println(RedMessage);
+ Serial.println(" ");
+for(int j=1;j<=NumRedBlinks;j=j+1){
+ Serial.println("You Are On Blink # ");
+ Serial.println( j );
+ digitalWrite(RedLedPin,HIGH);//Turns On Led
+ delay(RedOnTime);            //Wait
+ digitalWrite(RedLedPin,LOW); //Turns Off Led
+ delay(RedOffTime);           //Wait
+}
+
+
+
+ Serial.println(GreenMessage);
+ Serial.println(" ");
+for(int j=1;j<=NumGreenBlinks;j=j+1){
+ Serial.println("You Are On Blink # ");
+ Serial.println( j );
+ digitalWrite(GreenLedPin,HIGH);//Turns On Led
+ delay(GreenOnTime);            //Wait
+ digitalWrite(GreenLedPin,LOW); //Turns Off Led
+ delay(GreenOffTime);           //Wait
+}
+
+
+Serial.println(YellowMessage);
+ Serial.println(" ");
+for(int j=1;j<=NumYellowBlinks;j=j+1){
+ Serial.println("You Are On Blink # ");
+ Serial.println( j );
+ digitalWrite(YellowLedPin,HIGH);//Turns On Led
+ delay(YellowOnTime);            //Wait
+ digitalWrite(YellowLedPin,LOW); //Turns Off Led
+ delay(YellowOffTime);           //Wait
+}
+
+
+
+
+}
